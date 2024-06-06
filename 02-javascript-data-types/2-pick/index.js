@@ -7,3 +7,4 @@
 export const pick = (obj, ...fields) => {
     return Object.fromEntries(Object.entries(obj).filter(([field]) => fields.includes(field)));
 };
+
