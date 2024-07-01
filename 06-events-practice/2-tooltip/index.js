@@ -28,10 +28,13 @@ export default class Tooltip {
     }
   };
 
-  onPointerOut = () => {
-    this.remove();
+  onPointerOut = (event) => {
+    const element = event.target.closest('.tooltip');
+    if (!element) {
+      this.remove();
+    }
   };
-
+  
   render(html) {
     this.element = document.createElement('div');
     this.element.className = 'tooltip';
